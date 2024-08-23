@@ -1,0 +1,15 @@
+server:
+  port: 3100
+spring:
+  application:
+    name: english-client
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+services:
+    client: ${services.client:spanish-client}
+
